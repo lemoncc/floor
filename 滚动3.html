@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #obj{background:red;width:300px;height:200px;position:relative;}
+    </style>
+</head>
+<body>
+<div id="obj"></div>
+<script type="text/javascript">
+    document.getElementById("obj").onclick=function(e){
+        //获取的这个ID为obj的DIV对象就是个实例引起鼠标事件的元素
+        //e代表事件对象（W3C DOM标准下）
+        console.log(arguments);
+        var e=e || event; //标准化事件对象（W3C DOM 和IE DOM ）
+        e.Target=e.Target || e.srcElement;//标准化事件对象属性<引起事件的元素>
+        //（W3C DOM 和IE DOM ）
+        e.layerX=e.layerX || e.offsetX;//鼠标相对于引起事件的元素的父元素的X坐标(标准化IE)
+        e.layerY=e.layerY || e.offsetY;//鼠标相对于引起事件的元素的父元素的Y坐标(标准化IE)
+        e.pageX
+        alert("相对这个DIV的X方向的坐标"+e.layerX+"\n相对这个DIV的Y方向的坐标"+e.layerY+"\n相对于页面的x方向坐标"+e.pageX)
+    }
+</script>
+</body>
+</html>
+
+
+
+e.target||e.srcElement
+
+

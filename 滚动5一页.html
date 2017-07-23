@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            margin:0;
+        }
+        div{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="abc" style="background:red"></div>
+    <div class="abc" style="background:green"></div>
+    <div class="abc" style="background:blue"></div>
+    <div class="abc" style="background:yellow"></div>
+    <div class="abc" style="background:pink"></div>
+    <div class="abc" style="background:orange"></div>
+    <div class="abc" style="background:#ddd"></div>
+    <script>
+        var obj=document.getElementsByTagName("div");
+        [].forEach.call(obj,function(item){
+                item.style.height=innerHeight+"px";
+        })
+
+
+        document.body.addEventListener("mousewheel",(e)=>{
+            e.preventDefault();
+
+            if(e.wheelDelta>0){
+                window.scrollBy(0, -innerHeight);
+            }else{
+                window.scrollBy(0, innerHeight);
+            }
+            console.log(e);
+            console.log(e.distance);
+            console.log(e.wheelDelta);
+            console.log(innerHeight);
+            console.log(screen.height);
+
+        })
+    </script>
+</body>
+</html>
